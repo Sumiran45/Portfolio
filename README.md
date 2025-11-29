@@ -34,3 +34,105 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+
+my-portfolio/
+├── src/
+│   ├── app/
+│   │   ├── (admin)/                    # Admin routes group
+│   │   │   ├── admin/
+│   │   │   │   ├── layout.tsx
+│   │   │   │   ├── page.tsx            # Dashboard
+│   │   │   │   ├── projects/
+│   │   │   │   │   ├── page.tsx
+│   │   │   │   │   ├── new/
+│   │   │   │   │   └── [id]/
+│   │   │   │   └── blog/
+│   │   │   └── login/
+│   │   │       └── page.tsx
+│   │   ├── api/                        # API routes
+│   │   │   ├── auth/
+│   │   │   │   ├── login/
+│   │   │   │   │   └── route.ts
+│   │   │   │   └── logout/
+│   │   │   │       └── route.ts
+│   │   │   ├── projects/
+│   │   │   │   ├── route.ts            # GET, POST
+│   │   │   │   └── [id]/
+│   │   │   │       └── route.ts        # GET, PUT, DELETE
+│   │   │   ├── blog/
+│   │   │   │   ├── route.ts
+│   │   │   │   └── [id]/
+│   │   │   │       └── route.ts
+│   │   │   └── contact/
+│   │   │       └── route.ts
+│   │   ├── projects/
+│   │   │   ├── page.tsx
+│   │   │   └── [slug]/
+│   │   │       └── page.tsx
+│   │   ├── blog/
+│   │   │   ├── page.tsx
+│   │   │   └── [slug]/
+│   │   │       └── page.tsx
+│   │   ├── about/
+│   │   │   └── page.tsx
+│   │   ├── contact/
+│   │   │   └── page.tsx
+│   │   ├── layout.tsx                  # Root layout
+│   │   ├── page.tsx                    # Home page
+│   │   └── globals.css
+│   ├── components/
+│   │   ├── ui/                         # Reusable UI components
+│   │   │   ├── Button.tsx
+│   │   │   ├── Input.tsx
+│   │   │   ├── Card.tsx
+│   │   │   ├── Modal.tsx
+│   │   │   └── Spinner.tsx
+│   │   ├── layout/                     # Layout components
+│   │   │   ├── Header.tsx
+│   │   │   ├── Footer.tsx
+│   │   │   └── Navigation.tsx
+│   │   ├── home/                       # Home page sections
+│   │   │   ├── Hero.tsx
+│   │   │   ├── About.tsx
+│   │   │   ├── Skills.tsx
+│   │   │   └── FeaturedProjects.tsx
+│   │   ├── projects/
+│   │   │   ├── ProjectCard.tsx
+│   │   │   ├── ProjectGrid.tsx
+│   │   │   └── ProjectFilter.tsx
+│   │   ├── blog/
+│   │   │   ├── BlogCard.tsx
+│   │   │   └── BlogList.tsx
+│   │   ├── forms/
+│   │   │   ├── ContactForm.tsx
+│   │   │   └── ProjectForm.tsx
+│   │   └── admin/
+│   │       ├── Sidebar.tsx
+│   │       └── DataTable.tsx
+│   ├── lib/
+│   │   ├── db/
+│   │   │   ├── mongodb.ts              # MongoDB connection
+│   │   │   └── models/                 # Mongoose models
+│   │   │       ├── User.ts
+│   │   │       ├── Project.ts
+│   │   │       ├── Blog.ts
+│   │   │       └── Contact.ts
+│   │   ├── validations/                # Zod schemas
+│   │   │   ├── auth.ts
+│   │   │   ├── project.ts
+│   │   │   ├── blog.ts
+│   │   │   └── contact.ts
+│   │   ├── utils/
+│   │   │   ├── auth.ts                 # JWT helpers
+│   │   │   ├── api-response.ts
+│   │   │   └── helpers.ts
+│   │   └── constants.ts
+│   ├── middleware.ts                   # Auth middleware
+│   ├── types/
+│   │   ├── index.ts
+│   │   ├── models.ts
+│   │   └── api.ts
+│   └── hooks/                          # Custom React hooks
+│       ├── useAuth.ts
+│       └── useProjects.ts
