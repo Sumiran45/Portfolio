@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { ProfessionalBackground } from "@/components/background/SolarSystem";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,11 +24,24 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+    <html lang="en" className="h-full">
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-slate-950 text-white`}>
+        <div className="fixed inset-0 -z-10">
+          <ProfessionalBackground />
+          
+          <div className="absolute inset-0 overflow-hidden">
+            <div className="absolute top-10 left-4 md:left-20 w-64 md:w-96 h-64 md:h-96 bg-purple-500 rounded-full mix-blend-screen blur-3xl opacity-30" />
+            <div className="absolute -bottom-10 right-0 md:right-20 w-72 md:w-104 h-72 md:h-104 bg-pink-500 rounded-full mix-blend-screen blur-3xl opacity-25" />
+            <div className="absolute top-1/2 -left-10 w-72 h-72 bg-indigo-500 rounded-full mix-blend-screen blur-3xl opacity-20" />
+          </div>
+        </div>
+        
+        {/* Main content */}
+        <div className="relative z-10 bg-gradient-to-b from-slate-950/80 to-transparent">
+          <div className="min-h-screen">
+            {children}
+          </div>
+        </div>
       </body>
     </html>
   );
